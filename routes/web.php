@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\App;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\LocalizationController;
 use \App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\NavigationController;
 use App\Http\Controllers\Admin\PermissionsController;
+use App\Http\Controllers\viewController;
 
 
 /*
@@ -69,6 +71,9 @@ Route::get('annonce', [annonceController::class, 'index'])->name('annonce');
 Route::resource('ajouter', ajouterController::class);
 Route::resource('client', clientController::class);
 Route::resource('listesAnnonce', AnnonceRController::class);
+Route::get('/jsonview',[viewController::class,'store'])->name('view');
+
+
 
 
 

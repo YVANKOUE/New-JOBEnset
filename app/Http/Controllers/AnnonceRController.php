@@ -45,16 +45,7 @@ class AnnonceRController extends Controller
     public function store(Request $request)
     {
 
-        // $annonces = annonce::create ([
-        //     'title' => $request['title'],
-        //     'description' => $request['description'],
-        //     'domaine' => $request['domaine'],
-        //     'sousDomaine' => $request['sousDomaine'],
-        // ]);
-       
-        // $annonces = annonce::select('id')->where('id', $annonces);
-        // dd('title');
-        // return redirect()->route('listesAnnonce.index');
+        // 
     }
 
     /**

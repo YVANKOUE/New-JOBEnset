@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class DomainWithSousdomain extends Component
 {
-    public $domains;
+    public array $domains = [];
     public $sous_domains;
 
     // public domain
@@ -19,7 +19,7 @@ class DomainWithSousdomain extends Component
 
     public function mount()
     {
-        $this->domains = domain::all();
+        $this->domains[] = domain::all();
         $this->sous_domains = collect();
     }
     public function render()
@@ -28,7 +28,7 @@ class DomainWithSousdomain extends Component
     }
     public function updatedSelectedDomain($domain)
     {
-        // dd($domain);
+        dd($domain);
         if (!is_null($domain)) { 
             //$domains = DB::table('sousdomains')->where('domain_id', $domain)->pluck('domain_id')->toArray();
            

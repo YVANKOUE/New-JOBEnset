@@ -1,9 +1,11 @@
 <div>
     <div class="form-group">
-        <select name="domain" class="form-control item" id="domain" placeholder="domain" wire:model='selectedDomain' >
+        <select name="domain[]" class="form-control item" id="domain" placeholder="domain" wire:model='selectedDomain' >
             <option value="">Select domain</option>
             @foreach ($domains as $domain)
-                <option class="form-control item" value="{{$domain->id}}">{{$domain->name}}</option>
+                @foreach ($domain as $value)
+                    <option class="form-control item" value="{{$value->id}}">{{$value->name}}</option>
+                @endforeach
             @endforeach
         </select>
     </div>
